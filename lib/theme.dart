@@ -6,6 +6,7 @@ Color whiteColor = Color(0XFFFFFFFF);
 Color blackColor = Color(0XFF000000);
 Color greyColor = Color(0XFFAFAFAF);
 Color lightGreyColor = Color(0XFFF1F3FF);
+Color starColor = Color(0XFFE76D81);
 
 final double defaultMargin = 30.0;
 
