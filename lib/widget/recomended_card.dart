@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rent_house/pages/details_page.dart';
 import 'package:rent_house/theme.dart';
 
 class RecomendedCard extends StatelessWidget {
@@ -35,85 +36,92 @@ class RecomendedCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(20),
-            ),
-            child: Image.asset(
-              imageUrl,
-              height: 150,
-              width: 231,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Container(
-            height: 59,
-            width: 231,
-            decoration: BoxDecoration(
-              color: whiteColor,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return DetailsPage();
+          }));
+        },
+        child: Column(
+          children: [
+            ClipRRect(
               borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(20),
+                top: Radius.circular(20),
+              ),
+              child: Image.asset(
+                imageUrl,
+                height: 150,
+                width: 231,
+                fit: BoxFit.cover,
               ),
             ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              child: Row(
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        houseName,
-                        style: titleTextStyle.copyWith(
-                          fontSize: 14,
-                        ),
-                      ),
-                      Text(
-                        houseAddress,
-                        style: subTitleTextStyle.copyWith(
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: (star1) ? starColor : greyColor,
-                        size: 12,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: (star2) ? starColor : greyColor,
-                        size: 12,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: (star3) ? starColor : greyColor,
-                        size: 12,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: (star4) ? starColor : greyColor,
-                        size: 12,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: (star5) ? starColor : greyColor,
-                        size: 12,
-                      )
-                    ],
-                  )
-                ],
+            Container(
+              height: 59,
+              width: 231,
+              decoration: BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(20),
+                ),
               ),
-            ),
-          )
-        ],
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                child: Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          houseName,
+                          style: titleTextStyle.copyWith(
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          houseAddress,
+                          style: subTitleTextStyle.copyWith(
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: (star1) ? starColor : greyColor,
+                          size: 12,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: (star2) ? starColor : greyColor,
+                          size: 12,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: (star3) ? starColor : greyColor,
+                          size: 12,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: (star4) ? starColor : greyColor,
+                          size: 12,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: (star5) ? starColor : greyColor,
+                          size: 12,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
