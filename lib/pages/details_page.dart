@@ -24,28 +24,6 @@ class DetailsPage extends StatelessWidget {
               ),
             ),
           ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 40,
-                  left: 20,
-                ),
-                child: Container(
-                  width: 30,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    color: whiteColor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Icon(
-                    Icons.chevron_left,
-                    color: blackColor,
-                  ),
-                ),
-              )
-            ],
-          ),
           ListView(
             children: [
               Padding(
@@ -278,6 +256,33 @@ class DetailsPage extends StatelessWidget {
                   ],
                 ),
               ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 40,
+                  left: 20,
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: whiteColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Icon(
+                      Icons.chevron_left,
+                      color: blackColor,
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ],
